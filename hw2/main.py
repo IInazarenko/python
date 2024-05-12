@@ -7,15 +7,19 @@ import matplotlib.pyplot as plt
 
 
 if __name__ == '__main__':
-    alpha = np.pi/600  # значение alpha
+    alpha = symbols('alpha')
+ # значение alpha
     t = symbols('t')
     RA = Matrix([[50 * (2 * cos(alpha * t) - 3 * cos(2 * alpha * t))],
                 [50 * (2 * sin(alpha * t) - 3 * sin(2 * alpha * t))],
                 [5 * sin(2 * alpha * t)]])
 
     # print(RA)
-    # dRA = RA.diff(t)
-    # ddRA = dRA.diff(t)
+    dRA = RA.diff(t)
+    print(dRA)
+    ddRA = dRA.diff(t)
+    print ("ddr")
+    print(ddRA)
     # e1 = dRA/sqrt(10000 + 150*150 - 15000 * cos (alpha * t)+ 25 * sin(2*alpha*t) * sin(2*alpha*t))
     # print("e1:")
     # print(e1)
