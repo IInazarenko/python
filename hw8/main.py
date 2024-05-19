@@ -23,7 +23,7 @@ if __name__ == '__main__':
           sp.Matrix([[1, 0, 0, 0], [0, sp.cos(-sp.pi / 2), -sp.sin(-sp.pi / 2), 0],
                      [0, sp.sin(-sp.pi / 2), sp.cos(-sp.pi / 2), 0], [0, 0, 0, 1]])
 
-    H23 = sp.Matrix([[sp.cos(e1 - sp.pi/2), -sp.sin(e1 - sp.pi/2), 0, 0], [sp.sin(e1 - sp.pi/2), sp.cos(e1 - sp.pi/2), 0, 0],
+    H23 = sp.Matrix([[sp.cos(e1), -sp.sin(e1), 0, 0], [sp.sin(e1), sp.cos(e1), 0, 0],
                      [0, 0, 1, 0], [0, 0, 0, 1]]) @ \
           sp.Matrix([[1, 0, 0, 0], [0, sp.cos(-sp.pi / 2), -sp.sin(-sp.pi / 2), 0],
                      [0, sp.sin(-sp.pi / 2), sp.cos(-sp.pi / 2), 0], [0, 0, 0, 1]])
@@ -172,9 +172,9 @@ if __name__ == '__main__':
 
     A = sp.Matrix([[0,0,0,0,1,0,0,0], [0,0,0,0,0,1,0,0], [0,0,0,0,0,0,1,0], [0,0,0,0,0,0,0,1],
                    [a51, a52, a53, a54, a55, a56, a57, a58], [a61, a62, a63, a64, a65, a66, a67, a68],
-                   [a71, a72, a73, a74, a75, a76, a77, a78], [a81, a82, a83, a84, a85, a86, a87, a88]]).subs({x1: 0, x2: 0, e1: sp.pi/2, e2: 0,
+                   [a71, a72, a73, a74, a75, a76, a77, a78], [a81, a82, a83, a84, a85, a86, a87, a88]]).subs({x1: 0, x2: 0, e1: 0, e2: 0,
                                                                                                               x1dot: 0, x2dot: 0, e1dot: 0, e2dot: 0})
-    B = sp.Matrix([[0, 0], [0, 0], [0, 0], [0, 0], [u51, u52], [u61, u62], [u71, u72], [u81, u82]]).subs({x1: 0, x2: 0, e1: sp.pi/2, e2: 0,
+    B = sp.Matrix([[0, 0], [0, 0], [0, 0], [0, 0], [u51, u52], [u61, u62], [u71, u72], [u81, u82]]).subs({x1: 0, x2: 0, e1: 0, e2: 0,
                                                                                                               x1dot: 0, x2dot: 0, e1dot: 0, e2dot: 0})
     print("A")
     sp.print_latex(A)
